@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+    builder:
+        image: node:8.4.0-alpine
+        ports:
+            - 4200:4200
