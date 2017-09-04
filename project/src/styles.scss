@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'common';
+
+html, body {
+  font-family: $mat-font-family;
+  margin: 0;
+  padding: 0;
+  .bingo-text-active {
+    color: $colorActive;
+  }
+  .bingo-text-inactive {
+    color: $colorInactive;
+  }
+}

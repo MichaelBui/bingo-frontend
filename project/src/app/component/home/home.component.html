@@ -1,0 +1,38 @@
+<div [ngSwitch]="gameLevel$ | async" class="hello {{gameLevel$ | async}}">
+  <div *ngSwitchCase="-1">
+    <div fxLayout="column">
+      <main fxFlex fxLayout="column" fxLayoutAlign="center center">
+        <label class="bingo-text-inactive">Game Not Started!</label>
+      </main>
+      <footer>
+        <button md-raised-button color="primary">Join Game</button>
+      </footer>
+    </div>
+  </div>
+  <div *ngSwitchCase="0">
+    <div fxLayout="column">
+      <main fxFlex fxLayout="column" fxLayoutAlign="center center">
+        <label class="bingo-text-active">Ready?</label>
+      </main>
+      <footer>
+        <md-form-field>
+          <input type="password" maxlength="6" mdInput placeholder="Game's Key" [(ngModel)]="gameKey" value="{{gameKey}}" />
+        </md-form-field>
+        <button md-raised-button color="primary" (click)="generateGameNumber(gameKey)">Start</button>
+      </footer>
+    </div>
+  </div>
+  <div *ngSwitchDefault>
+    <div fxLayout="column">
+      <main fxFlex fxLayout="column" fxLayoutAlign="center center">
+        <label class="bingo-text-active">{{gameNumber$ | async}}</label>
+      </main>
+      <footer>
+        <md-form-field>
+          <input type="password" maxlength="6" mdInput placeholder="Game's Key" [(ngModel)]="gameKey" value="{{gameKey}}" />
+        </md-form-field>
+        <button md-raised-button color="primary" (click)="generateGameNumber(gameKey)">Next</button>
+      </footer>
+    </div>
+  </div>
+</div>

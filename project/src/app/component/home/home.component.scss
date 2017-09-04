@@ -1,0 +1,16 @@
+@import '../../../common';
+
+:host {
+  text-align: center;
+  div[fxLayout] {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  label {
+    font-size: 6rem;
+  }
+  button {
+    margin: 1rem;
+  }
+}

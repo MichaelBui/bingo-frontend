@@ -1,0 +1,25 @@
+<md-toolbar color="primary">
+  <nav fxLayout="row">
+    <label routerLink="">Bingo</label>
+    <div fxFlex></div>
+    <div>
+      <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon>more_vert</md-icon>
+      </button>
+      <md-menu #menu="mdMenu">
+        <button md-menu-item routerLink="/">
+          <span>Home</span>
+        </button>
+        <button *ngIf="(gameLevel$ | async) == -1" md-menu-item (click)="openActivationDialog()">
+          <span>Activate Game</span>
+        </button>
+        <button *ngIf="(gameLevel$ | async) > -1" md-menu-item (click)="openResetDialog()">
+          <span>Reset Game</span>
+        </button>
+        <button *ngIf="(gameLevel$ | async) > 0" md-menu-item routerLink="/numbers">
+          <span>Game Numbers</span>
+        </button>
+      </md-menu>
+    </div>
+  </nav>
+</md-toolbar>

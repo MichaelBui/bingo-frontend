@@ -1,0 +1,10 @@
+<p>
+  Please provide game's key to activate:
+</p>
+<div>
+  <md-form-field>
+    <input type="password" maxlength="6" mdInput placeholder="Game's Key" [(ngModel)]="gameKey" value="{{gameKey}}" />
+  </md-form-field>
+</div>
+<button md-raised-button color="primary" (click)="startActivation(gameKey)">Activate</button>
+<button md-button color="warn" (click)="closeDialog()">Cancel</button>

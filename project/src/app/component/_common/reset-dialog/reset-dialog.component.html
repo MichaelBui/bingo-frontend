@@ -1,0 +1,10 @@
+<p>
+  Please provide game's key to reset:
+</p>
+<div>
+  <md-form-field>
+    <input type="password" maxlength="6" mdInput placeholder="Game's Key" [(ngModel)]="gameKey" value="{{gameKey}}" />
+  </md-form-field>
+</div>
+<button md-raised-button color="warn" (click)="startResetting(gameKey)">Reset</button>
+<button md-button color="primary" (click)="closeDialog()">Cancel</button>
